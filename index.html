@@ -12,7 +12,7 @@
     
     <script src='https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js'></script>
     <script>
-        const socket = io();
+        const socket = io('https://wa-rest-udayanagamis-projects.vercel.app/', { 'transports': ['websocket'], });
 
         socket.on('qr', (qr) => {
             qg(qr)
