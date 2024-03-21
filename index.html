@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>whatsapp auth</title>
+    </head>
+    <body>
+    <input type="text" spellcheck="false" id="text" value="https://google.com" />
+    <div id="qrcode"></div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js'></script>
+    <script>
+        const socket = io();
+
+        socket.on('qr', (qr) => {
+            qg(qr)
+        });
+
+        function qg(d) {
+            const qrcode = document.getElementById("qrcode");
+            const textInput = document.getElementById("text");
+            const qrplate = new QRCode(qrcode);
+            textInput.value = d;
+            qrplate.makeCode(textInput.value.trim());
+        }
+        </script>
+
+
+  </body>
+</html>
