@@ -6,13 +6,14 @@
     </head>
     <body>
     <input type="text" spellcheck="false" id="text" value="https://google.com" style="display: none;" />
+    whatsapp auth
     <div id="qrcode"></div>
     
     <script src="/socket.io/socket.io.js"></script>
     
     <script src='https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js'></script>
     <script>
-        const socket = io('https://wa-rest-udayanagamis-projects.vercel.app/', { 'transports': ['websocket'], });
+        const socket = io();
 
         socket.on('qr', (qr) => {
             qg(qr)
